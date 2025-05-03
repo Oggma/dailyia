@@ -1,0 +1,30 @@
+
+@use "variables" as *;
+
+body {
+  background-color: $color-bg-dark;
+  color: $color-text-main;
+  font-family: 'Press Start 2P', 'monospace';
+}
+
+.progress-bar {
+  background-color: $color-border-soft;
+}
+
+.progress-bar-inner {
+  background-color: $color-skill-progress;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+.pixel-frame {
+  border: 4px solid #000;
+  box-shadow: 0 0 0 2px $color-border-soft;
+}
+
+.card-block {
+  background-color: $color-bg-light;
+  border: 4px solid $color-border-dark;
+  box-shadow: 0 0 0 2px $color-border-soft;
+}

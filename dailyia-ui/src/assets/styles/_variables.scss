@@ -1,0 +1,29 @@
+// 🌒 Primary background (dark theme base)
+$color-bg-dark: #1f1d2b;
+
+// 📜 Light parchment background (for cards and panels)
+$color-bg-light: #f2e8c9;
+
+// 🖋️ Main text color
+$color-text-main: #2d1e1e;
+
+// ✨ Accent color (for titles, links, progress bars)
+$color-accent: #7f5af0;
+
+// 🔥 Highlight color (for actions, XP gains, danger)
+$color-highlight: #f25c54;
+
+// 🧱 Retro-style borders and shadows
+$color-border-dark: #000000;
+$color-border-soft: #563c2e;
+
+// 🧪 Progress indicators
+$color-xp-progress: $color-highlight;
+$color-skill-progress: $color-accent;
+
+$color-bg-input: #e0cca0;
+$color-bg-btn--primary: #c5b140;
+$color-bg-btn--secondary: #e0cca0;
+
+$color-bg-disabled: #c5bdad;
+$opacity-disabled: 0.5;

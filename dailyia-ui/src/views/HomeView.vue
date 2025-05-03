@@ -1,9 +1,12 @@
 <script setup lang="ts">
-
+import QuestList from '@/components/quests/QuestList.vue';
 </script>
 
 <template>
-  <main>
-    Main
-  </main>
+  <div>
+    <QuestList />
+  </div>
 </template>
+
+<style scoped>
+</style>
