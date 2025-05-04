@@ -31,3 +31,4 @@ coverage
 dailyia-ui/.vscode/extensions.json
 dailyia-ui/.vscode/settings.json
 dailyia-ui/.env
+dailyia-api/target/*
