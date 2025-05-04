@@ -11,9 +11,8 @@ serde_json = "1"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
 sqlx = { version = "0.8.5", features = ["postgres", "runtime-tokio-native-tls"] }
-tokio = { version = "1", features = ["full"] }
 dotenvy = "0.15" # for loading .env
 
 [[bin]]
-name = "your_binary_name"
+name = "dailyia-api"
 path = "src/main.rs"
