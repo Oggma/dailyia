@@ -1,36 +1,25 @@
-use axum::{
-    extract::Json,
-    routing::{get, post},
-    Router,
-};
-use serde::{Deserialize, Serialize};
-use tracing_subscriber;
+use axum::Router;
 
-#[derive(Debug, Deserialize, Serialize)]
-struct User {
-    username: String,
-    email: String,
-}
+mod infra;
+use crate::infra::config;
+use crate::infra::db;
 
-// GET /health
-async fn health_check() -> &'static str {
-    "OK"
-}
-
-// POST /users
-async fn create_user(Json(payload): Json<User>) -> Json<User> {
-    Json(payload)
-}
+mod routes;
+use crate::routes::health;
 
 #[tokio::main]
 async fn main() {
-    tracing_subscriber::fmt().with_env_filter("info").init();
+    config::init_logging();
 
-    let router = Router::new()
-        .route("/health", get(health_check))
-        .route("/users", post(create_user));
+    let config = config::load_config();
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let _pool = db::create_pool(&config.database_url, config.max_db_connections).await;
+
+    let router = Router::new().route("/health", axum::routing::get(health::health_check));
+
+    let listener = tokio::net::TcpListener::bind(format!("127.0.0.1:{}", config.app_port))
+        .await
+        .unwrap();
     println!(
         "Server running at http://{}",
         listener.local_addr().unwrap()

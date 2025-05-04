@@ -11,8 +11,7 @@ serde_json = "1"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
 sqlx = { version = "0.8.5", features = ["postgres", "runtime-tokio-native-tls"] }
-dotenvy = "0.15" # for loading .env
-openssl = { version = "0.10", features = ["vendored"] }
+dotenv = "0.15"
 
 [[bin]]
 name = "dailyia-api"

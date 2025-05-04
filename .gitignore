@@ -33,3 +33,4 @@ dailyia-ui/.vscode/settings.json
 dailyia-ui/.env
 dailyia-api/target/*
 package-lock.json
+dailyia-api/.env
