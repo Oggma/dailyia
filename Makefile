@@ -1,7 +1,7 @@
 VUE_DIR = ./dailyia-ui
 RUST_DIR = ./dailyia-api
-VUE_OUTPUT_DIR = ../build-ui/dist
-RUST_OUTPUT_DIR = ../build-api/target/release
+VUE_OUTPUT_DIR = ../../build-ui/dist
+RUST_OUTPUT_DIR = ../../build-api/target/release
 
 .PHONY: all vue rust clean
 
@@ -19,7 +19,7 @@ rust:
 	mkdir -p $(RUST_OUTPUT_DIR)
 	cd $(RUST_DIR) && cargo build --release --target-dir=$(RUST_OUTPUT_DIR)
 	@echo "Running Rust application..."
-	cd $(RUST_OUTPUT_DIR) && ./your_rust_executable_name
+	cd $(RUST_OUTPUT_DIR) && ./dailyia-api
 
 clean:
 	@echo "Cleaning Vue.js build..."
